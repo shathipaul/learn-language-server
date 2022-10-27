@@ -17,11 +17,12 @@ app.get('/language-categories', (req, res) =>{
     res.send(categories);
 })
 
-// app.get('/languageDetail/:id', (req, res) =>{
-//     const id = req.params.id;
-//     const selectedLanguage = languageDetail.find( language => language.id === id)
-//     res.send(selectedLanguage);
-// })
+app.get('/course/:id', (req, res) =>{
+    const id = req.params.id;
+    const selectedLanguage = languageDetail.find( language => language.id === id)
+    res.send(selectedLanguage);
+})
+
 app.get('/languageDetail/', (req, res) =>{
     res.send(languageDetail);
 })
