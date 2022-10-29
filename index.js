@@ -16,6 +16,9 @@ app.get('/', (req, res) => {
 app.get('/categories', (req, res) => {
     res.send(categories);
 })
+app.get('/courses', (req, res) => {
+    res.send(courses);
+})
 
 app.get('/courses/:id', (req, res) => {
     const id = req.params.id;
@@ -31,8 +34,8 @@ app.get('/courses/:id', (req, res) => {
 
 app.get('/course/:id', (req, res) => {
     const id = req.params.id;
-    const selectedCourses = courses.find(language => language.id === id)
-    res.send(selectedCourses);
+    const coursesID = courses.find(course => course.user_id === id)
+        res.send(coursesID);
 })
 
 
